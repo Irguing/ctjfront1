@@ -12,6 +12,7 @@ body {
 }
 
 header {
+    position: absolute;
     top: 10px;
     left: 20px;
     font-size: 2em;
@@ -23,11 +24,12 @@ header {
     flex-direction: row;
     width: 100%;
     max-width: 1270px;
-    height: 85vh;
+    height: auto; /* Cambiado a auto para evitar problemas de desplazamiento */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
+    padding: 15px;
 }
 
 .form-container {
@@ -36,7 +38,6 @@ header {
     background: white;
     border-radius: 15px;
     transition: all 0.4s ease;
-    height: 100%; /* Aseguramos que ocupe todo el alto disponible */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -72,6 +73,7 @@ header {
     align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
+    min-height: 300px; /* Establecer una altura mínima para la imagen */
 }
 
 .image-container img {
@@ -150,23 +152,16 @@ header {
 /* Hacer que el diseño sea responsive */
 @media (max-width: 992px) {
     .form-page-container {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        height: auto; /* Evitar desplazamientos no deseados */
     }
 
     .form-container {
-        height: auto;
         margin-bottom: 20px;
     }
 
     .image-container {
-        height: 300px;
-        margin-top: 20px;
-    }
-
-    .image-container img {
-        max-height: 100%;
+        min-height: 250px; /* Ajustar la altura mínima */
     }
 }
 
@@ -192,6 +187,10 @@ header {
     .file-msg {
         font-size: 0.9em;
     }
+
+    .image-container {
+        min-height: 200px; /* Ajustar altura mínima */
+    }
 }
 
 @media (max-width: 576px) {
@@ -214,7 +213,7 @@ header {
     }
 
     .image-container {
-        height: 250px;
+        min-height: 150px; /* Ajustar altura mínima */
     }
 
     .lightbox-content {
