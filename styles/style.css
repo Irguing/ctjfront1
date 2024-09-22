@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css");
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    top: 10px;
+    left: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.form-page-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 1270px;
+    height: 85vh;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.form-container {
+    flex: 1;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    transition: all 0.4s ease;
+    height: 100%; /* Aseguramos que ocupe todo el alto disponible */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.file-drop-area {
+    border: 2px dashed #adadad;
+    cursor: pointer;
+    color: #555;
+    background-color: #fafafa;
+    position: relative;
+}
+
+.file-msg {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.file-input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 90%;
+    object-fit: contain;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.search-result {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+}
+
+.search-result img {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.lightbox.show {
+    display: flex;
+}
+
+.lightbox-content {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 400px;
+    position: relative;
+}
+
+.lightbox-img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    background-color: #ff4742;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    background-color: #ff6f61;
+}
+
+/* Hacer que el diseño sea responsive */
+@media (max-width: 992px) {
+    .form-page-container {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .form-container {
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .image-container {
+        height: 300px;
+        margin-top: 20px;
+    }
+
+    .image-container img {
+        max-height: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.5em;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .search-result {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .search-result img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .file-msg {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 576px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .search-result {
+        font-size: 10px;
+        padding: 4px;
+    }
+
+    .search-result img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .file-msg {
+        font-size: 0.8em;
+    }
+
+    .image-container {
+        height: 250px;
+    }
+
+    .lightbox-content {
+        padding: 15px;
+        max-width: 300px;
+    }
+}
